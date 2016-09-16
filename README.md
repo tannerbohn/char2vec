@@ -5,6 +5,8 @@ It does this by taking a body of text (stored in `/data`) and training a shallow
 
 The result this algorithm has is that characters which appear in similar contexts will have similar encodings. For example, vowels often appear in similar contexts, so we would expect them to have similar encodings.  
 
+![example_embeddings](https://raw.github.com/tannerbohn/char2vec/master/tests/plot_brown_catLoss_4_with_spaces.png)
+
 ## Requirements
 
 This code is written in Python and requires [Keras](https://keras.io/).
