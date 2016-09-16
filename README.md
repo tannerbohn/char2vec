@@ -1,9 +1,9 @@
 # char2vec
 
-This code implements the skip-grap algorithm to find vector representations for the letters of the alphabet, as opposed to words as is done in word2vec.
+This code implements the [skip-grap](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf) algorithm to find vector representations for the letters of the alphabet, as opposed to words as is done in word2vec.
 It does this by taking a body of text (stored in `/data`) and training a shallow neural network to predict characters c_(n-1) and c_(n+1) given c_n. In this implementation, c_n is represented as a one-hot encoding, mapped to a hidden layer, and then mapped to two output layers (one each for c_(n-1) and c_(n+1)), with categorical cross-entropy losses.
 
-The result this algorithm has is that characters which appear in similar contexts will have similar encodings. For example, vowels often appear in similar contexts, so we would expect them to have similar encodings.  
+The result this algorithm has is that characters which appear in similar contexts will have similar encodings. For example, vowels often appear in similar contexts, so we would expect them to have similar encodings. Unlike the word2vec case where it is easy to conceive of what **king-man+woman = queen** means, I find it harder to interpret **m-z+t = w**.
 
 ![example_embeddings](https://raw.github.com/tannerbohn/char2vec/master/tests/plot_brown_catLoss_4_with_spaces.png)
 
