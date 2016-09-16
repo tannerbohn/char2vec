@@ -92,7 +92,7 @@ def getData(filename):
 	#for w, i in zip(words[:5000000], xrange(5000000)):
 	#	if i%100000 == 0: print(100.*i/5000000)
 	for w in words:
-		if random.random() < 0.75: continue
+		#if random.random() < 0.75: continue
 		xp, yp = wordToData(w)
 		X.extend(np.array(xp, np.float32))
 		y.extend(np.array(yp, np.float32))
