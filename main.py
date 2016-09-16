@@ -156,6 +156,7 @@ if __name__ == "__main__":
 
 	encoder = Model(input = [input_layer], output=[encoding])
 
+	# when using larger windows, remember to add more loss weights
 	model.compile(optimizer='rmsprop', loss='categorical_crossentropy', loss_weights=[0.5, 0.5])
 
 	model.fit(X, y_cols, nb_epoch=15, batch_size=1024, shuffle=True, verbose=True)
