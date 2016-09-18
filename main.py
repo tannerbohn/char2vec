@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
+
 def cleanText(text):
 	global CHARS
 	# lower case
@@ -145,7 +146,7 @@ if __name__ == "__main__":
 	y_cols = [np.array([v[i] for v in y], np.float32) for i in range(nb_cols)]
 		
 	input_layer = Input(shape=(len(CHARS),))
-	encoding = Dense(2, activation='tanh')(input_layer)
+	encoding = Dense(2, activation='linear')(input_layer)
 
 	output_1 = Dense(len(CHARS), activation='softmax')(encoding)
 	output_2 = Dense(len(CHARS), activation='softmax')(encoding)
